@@ -71,11 +71,21 @@
 
         minus {
             bindings = <&kp MINUS>;
-            key-positions = <12 11>;
+            key-positions = <1 2>;
         };
 
         equal {
             bindings = <&kp EQUAL>;
+            key-positions = <7 8>;
+        };
+
+        sqt {
+            bindings = <&kp SQT>;
+            key-positions = <11 12>;
+        };
+
+        dqt {
+            bindings = <&kp DQT>;
             key-positions = <17 18>;
         };
     };
@@ -181,7 +191,7 @@
 
             bindings = <
         &trans           &trans       &trans     &trans      &trans         &trans        &trans         &trans      &trans      &trans
-        &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT    &kp CARET     &kp AMPERSAND  &kp SQT     &trans      &trans
+        &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT    &kp CARET     &kp AMPERSAND  &kp PIPE    &trans      &trans
 &trans  &trans           &trans       &trans     &trans      &trans         &kp C_VOL_DN  &kp C_VOL_UP   &kp C_PREV  &kp C_NEXT  &kp BSLH  &trans
                                       &trans     &trans      &trans         &trans        &trans         &trans
             >;
