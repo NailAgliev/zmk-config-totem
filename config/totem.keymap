@@ -88,6 +88,11 @@
             bindings = <&kp DQT>;
             key-positions = <17 18>;
         };
+
+        z {
+            bindings = <&kp Z>;
+            key-positions = <22 21>;
+        };
     };
 
     behaviors {
@@ -138,10 +143,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-         &kp Q           &kp W          &kp F              &kp P            &kp B        &kp J          &kp L            &kp U              &kp Y          &kp SEMI
-         &HMR_L LCTRL A  &HMR_L LALT R  &HMR_L LEFT_GUI S  &HMR_L LSHIFT T  &kp G        &kp M          &HMR_R LSHIFT N  &HMR_R LEFT_GUI E  &HMR_R RALT I  &HMR_R LCTRL O
-&kp DEL  &kp Z           &kp X          &kp C              &kp D            &kp V        &kp K          &kp H            &kp COMMA          &kp DOT        &kp FSLH        &kp BSPC
-                                        &kp E              &lt 1 TAB        &kp SPACE    &kp BACKSPACE  &lt 2 E          &kp RET
+         &kp Q  &kp W          &kp F              &kp P                &kp B        &kp J      &kp L                &kp U              &kp Y          &kp SEMI
+         &kp D  &HMR_L LGUI R  &HMR_L LEFT_ALT S  &HMR_L LCTRL A       &kp G        &kp M      &HMR_R LCTRL N       &HMR_R LEFT_ALT O  &HMR_R LGUI I  &kp H
+&kp DEL  &kp X  &kp C          &kp BSLH           &kp COMMA            &kp V        &kp K      &kp DOT              &kp FSLH           &kp AMPERSAND  &kp COLON  &kp BSPC
+                               &lt 1 TAB          &HMR_L LEFT_SHIFT E  &kp SPACE    &kp ENTER  &HMR_R LEFT_SHIFT T  &lt 2 ESC
             >;
         };
 
@@ -164,10 +169,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &trans  &trans     &kp UP    &trans     &trans    &trans  &kp KP_N7  &kp KP_N8        &kp KP_N9  &kp KP_PLUS
-        &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans    &trans  &kp KP_N4  &kp KP_N5        &kp KP_N6  &kp KP_MINUS
-&trans  &trans  &kp PG_UP  &trans    &kp PG_DN  &trans    &trans  &kp KP_N1  &kp KP_N2        &kp KP_N3  &kp KP_MULTIPLY  &trans
-                           &trans    &trans     &trans    &trans  &trans     &kp KP_NUMBER_0
+        &trans  &trans     &kp UP    &trans     &trans    &trans  &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp KP_PLUS
+        &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &trans    &trans  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_MINUS
+&trans  &trans  &kp PG_UP  &trans    &kp PG_DN  &trans    &trans  &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &trans
+                           &trans    &trans     &trans    &trans  &kp KP_NUMBER_0  &trans
             >;
         };
 
@@ -190,10 +195,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &trans           &trans       &trans     &trans      &trans         &trans        &trans         &trans      &trans      &trans
-        &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT    &kp CARET     &kp AMPERSAND  &kp PIPE    &trans      &trans
-&trans  &trans           &trans       &trans     &trans      &trans         &kp C_VOL_DN  &kp C_VOL_UP   &kp C_PREV  &kp C_NEXT  &kp BSLH  &trans
-                                      &trans     &trans      &trans         &trans        &trans         &trans
+        &trans  &trans        &trans     &trans           &trans         &trans        &trans        &trans       &trans      &trans
+        &trans  &kp ASTERISK  &kp POUND  &kp EXCLAMATION  &kp PERCENT    &kp CARET     &kp DOLLAR    &kp AT_SIGN  &trans      &trans
+&trans  &trans  &trans        &trans     &trans           &trans         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PREV   &kp C_NEXT  &trans  &trans
+                              &trans     &trans           &trans         &trans        &trans        &trans
             >;
         };
 
@@ -231,7 +236,7 @@
         compatible = "zmk,conditional-layers";
 
         adj {
-            if-layers = <2 1>;
+            if-layers = <3 3>;
             then-layer = <3>;
         };
     };
