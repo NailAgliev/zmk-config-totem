@@ -150,7 +150,7 @@
             akt_jg { trigger-keys = <J>; max-prior-idle-ms = <300>; bindings = <&kp P &kp G>; };
         };
 
-        shift-repeat: shift-repeat {
+        shift_repeat: shift_repeat {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             bindings = <&sk LSHFT>;
