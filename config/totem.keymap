@@ -299,6 +299,20 @@
             label = "MACRO_PH";
         };
 
+        macro_Qu: macro_Qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp Q>,
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp U>;
+
+            label = "MACRO_QU";
+        };
+
         macro_Sch: macro_Sch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
