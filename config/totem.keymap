@@ -90,7 +90,7 @@
         };
 
         qu {
-            bindings = <&lk_qu H Q>;
+            bindings = <&lk_qu Q U>;
             key-positions = <1 3>;
             timeout-ms = <45>;
             slow-release;
