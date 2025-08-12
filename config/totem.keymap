@@ -304,7 +304,7 @@
         lkDqt_lkLT: lkDqt_lkLT {            // Hold for paired symbols
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = 200;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&pairDquotLT>, <&leftDquotLT>;
         };
@@ -336,7 +336,7 @@
         lkSqt_GT: lkSqt_GT {                // Hold for paired ’’
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = 200;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&pairSquotGT>, <&rightSquotGT>;
         };
@@ -393,7 +393,7 @@
         lkSqt_lkLT: lkSqt_lkLT {            // Hold for paired symbols
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = 200;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&pairSquotLT>, <&leftSquotLT>;
         };
@@ -425,7 +425,7 @@
         lkDqt_GT: lkDqt_GT {                // Hold for paired “”
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = 200;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&pairDquotGT>, <&rightDqtGT>;
         };
