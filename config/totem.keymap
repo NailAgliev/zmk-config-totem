@@ -192,6 +192,22 @@
         };
     };
 
+    macros {
+        macro_Th: macro_Th {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp T>,
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp H>;
+
+            label = "MACRO_TH";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
