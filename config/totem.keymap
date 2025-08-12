@@ -311,14 +311,8 @@
         pairDquotLT: pairDquotLT {          // SHFT for <>
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&pairDquotDchev>, <&t_pairLtGt>;
+            bindings = <&macro_pairDquo>, <&macro_pairLtGt>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        pairDquotDchev: pairDquotDchev {    // "" or ALT for «»
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&t_pairDquo>, <&t_pairDchev>;
-            mods = <(MOD_LALT|MOD_RALT)>;
         };
         leftDquotLT: leftDquotLT {          // SHFT for <
             compatible = "zmk,behavior-mod-morph";
@@ -349,7 +343,7 @@
         pairSquotChev: pairSquotChev {          // ALT = »
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&t_pairSquo>, <&kp RDCHEV>;
+            bindings = <&macro_pairSquo>, <&kp RDCHEV>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
         rightSquotGT: rightSquotGT {          // SHIFT = >
@@ -369,7 +363,7 @@
  */
 
 /*
- * &SqtLT (put just this in the keymap)
+ * &lkSqt_lkLT (put just this in the keymap)
  *
  * Single Quote key behaviors:
  *      tap     = ' single quote
@@ -377,7 +371,7 @@
  *      alt     = « (French quote double chevron)
  *      linger  = paired symbols w/insertion point between
  *
- * &DqtGT is the corresponding behavior.
+ * &lkDqt_GT is the corresponding behavior.
  *
  * This set is used when the ' appears to the left of " in the keymap
  * so the paired symbols <«  »> are spacially correct. (i.e. Rhodium)
@@ -386,9 +380,6 @@
  * referenced by this one.
  *
  */
- 
-#define SqtLT lkSqt_lkLT 0 0    // simple macros to keep the keymap uncluttered
-#define DqtGT lkDqt_GT 0 0      // simply put &SqtLT or &DqtGT in the keymap
 
         lkSqt_lkLT: lkSqt_lkLT {            // Hold for paired symbols
             compatible = "zmk,behavior-hold-tap";
@@ -400,13 +391,13 @@
         pairSquotLT: pairSquotLT {          // SHFT for <>
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&pairSquotDchev>, <&t_pairLtGt>;
+            bindings = <&pairSquotDchev>, <&macro_pairLtGt>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         pairSquotDchev: pairSquotDchev {    // '' or ALT for «»
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&t_pairSquo>, <&t_pairDchev>;
+            bindings = <&macro_pairSquo>, <&macro_pairDchev>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
         leftSquotLT: leftSquotLT {          // SHFT for <
@@ -432,14 +423,8 @@
         pairDquotGT: pairDquotGT {          // SHIFT = >
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&pairDquotChev>, <&kp GT>;
+            bindings = <&macro_pairDquo>, <&kp GT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        pairDquotChev: pairDquotChev {          // ALT = »
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&t_pairDquo>, <&kp RDCHEV>;
-            mods = <(MOD_LALT|MOD_RALT)>;
         };
         rightDqtGT: leftDqtGT {              // SHIFT = >
             compatible = "zmk,behavior-mod-morph";
@@ -484,9 +469,6 @@
 
         ak_HASH_INVX { trigger-keys = <FSLH>; max-prior-idle-ms = <my_ak_term>; bindings = <&kp BSPC &kp S_INVX>; };
         };
-
-/* Comma Magic */
-#define CommaMagic CmmaMgc CAPSLOCK 0   // simple macro to keep the keymap uncluttered
 
         CmmaSemi: CmmaSemi { // press = COMMA,shift = Semicolon
             compatible = "zmk,behavior-mod-morph";
@@ -676,6 +658,67 @@
 
             label = "MACRO_PHI";
         };
+
+
+        macro_pairLtGt: macro_pairLtGt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <55>;
+            bindings = <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_release &kp LALT>
+                , <&macro_release &kp RALT>
+                , <&macro_release &kp LCTL>
+                , <&macro_release &kp RCTL>
+                , <&macro_release &kp LGUI>
+                , <&macro_release &kp RGUI>
+                , <&macro_tap &kp LT>
+                , <&macro_tap &kp GT>
+                , <&macro_tap &kp LEFT>
+                ;
+
+            label = "MACRO_PAIR_GT"
+        };
+
+        macro_pairDquo: macro_pairDquo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_release &kp LALT>
+                , <&macro_release &kp RALT>
+                , <&macro_release &kp LCTL>
+                , <&macro_release &kp RCTL>
+                , <&macro_release &kp LGUI>
+                , <&macro_release &kp RGUI>
+                , <&macro_tap &kp LDQUO>
+                , <&macro_tap &kp RDQUO>
+                , <&macro_tap &kp LEFT>
+                ;
+
+            label = "MACRO_PAIR_DQUO";
+        };
+
+        macro_pairSquo: macro_pairSquo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_release &kp LALT>
+                , <&macro_release &kp RALT>
+                , <&macro_release &kp LCTL>
+                , <&macro_release &kp RCTL>
+                , <&macro_release &kp LGUI>
+                , <&macro_release &kp RGUI>
+                , <&macro_tap &kp LSQUO>
+                , <&macro_tap &kp RSQUO>
+                , <&macro_tap &kp LEFT>
+                ;
+
+            label = "MACRO_PAIR_SQUO";
+        };
+
+        
     };
 
     keymap {
