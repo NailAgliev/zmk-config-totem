@@ -240,46 +240,59 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&DOT>, <&kp COLON>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        DotColnJ: DotColnJ { // no adaptive Japanese
+
+        DotColnJ: DotColnJ {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        SlshStar: SlshStar {  // shift = *, alt = backslash
+
+        SlshStar: SlshStar {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&SlshBslh>, <&kp STAR>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         SlshBslh: SlshBslh {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp FSLH>, <&kp BSLH>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
-        SlshStarJ: SlshStarJ { // no adaptive Japanese
+
+        SlshStarJ: SlshStarJ {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp FSLH>, <&kp STAR>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         HashDllr: HashDllr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&HASH>, <&kp DLLR>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         MinusPlus: MinusPlus {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp PLUS>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-/*
+        /*
  * &DqtLT (put just this in the keymap)
  *
  * Double Quote key behaviors:
@@ -297,78 +310,93 @@
  * so the paired symbols <«  »> are spacially correct.
  *
  */
- 
-#define DqtLT lkDqt_lkLT 0 0    // simple macros to keep the keymap uncluttered
-#define SqtGT lkSqt_GT 0 0      // simply put &DqtLT or &SqtGT in the keymap
 
-        lkDqt_lkLT: lkDqt_lkLT {            // Hold for paired symbols
+        #define DqtLT lkDqt_lkLT 0 0    // simple macros to keep the keymap uncluttered
+#define SqtGT lkSqt_GT 0 0      // simply put &DqtLT or &SqtGT in the keymap
+        lkDqt_lkLT: lkDqt_lkLT {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = 200;
             flavor = "tap-preferred";
             bindings = <&pairDquotLT>, <&leftDquotLT>;
         };
-        pairDquotLT: pairDquotLT {          // SHFT for <>
+
+        pairDquotLT: pairDquotLT {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&pairDquotDchev>, <&t_pairLtGt>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        pairDquotDchev: pairDquotDchev {    // "" or ALT for «»
+
+        pairDquotDchev: pairDquotDchev {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&t_pairDquo>, <&t_pairDchev>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-        leftDquotLT: leftDquotLT {          // SHFT for <
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&leftDquotChev>, <&kp LT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        leftDquotChev: leftDquotLChev {     // " or ALT for «
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&DQT>, <&kp LDCHEV>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        lkSqt_GT: lkSqt_GT {                // Hold for paired ’’
+        leftDquotLT: leftDquotLT {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&leftDquotChev>, <&kp LT>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        leftDquotChev: leftDquotLChev {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&DQT>, <&kp LDCHEV>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        lkSqt_GT: lkSqt_GT {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = 200;
             flavor = "tap-preferred";
             bindings = <&pairSquotGT>, <&rightSquotGT>;
         };
-        pairSquotGT: pairSquotGT {          // SHIFT = >
+
+        pairSquotGT: pairSquotGT {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&pairSquotChev>, <&kp GT>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        pairSquotChev: pairSquotChev {          // ALT = »
+
+        pairSquotChev: pairSquotChev {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&t_pairSquo>, <&kp RDCHEV>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
-        rightSquotGT: rightSquotGT {          // SHIFT = >
+
+        rightSquotGT: rightSquotGT {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&SqtRchev>, <&kp GT>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        SqtRchev: SqtRchev {                // ' or ALT = »
+
+        SqtRchev: SqtRchev {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&SQT>, <&kp RDCHEV>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
-/*
+
+        /*
  * end of Double Quote key behaviors
  */
-
-/*
+        /*
  * &SqtLT (put just this in the keymap)
  *
  * Single Quote key behaviors:
@@ -386,71 +414,86 @@
  * referenced by this one.
  *
  */
- 
-#define SqtLT lkSqt_lkLT 0 0    // simple macros to keep the keymap uncluttered
-#define DqtGT lkDqt_GT 0 0      // simply put &SqtLT or &DqtGT in the keymap
 
-        lkSqt_lkLT: lkSqt_lkLT {            // Hold for paired symbols
+        #define SqtLT lkSqt_lkLT 0 0    // simple macros to keep the keymap uncluttered
+#define DqtGT lkDqt_GT 0 0      // simply put &SqtLT or &DqtGT in the keymap
+        lkSqt_lkLT: lkSqt_lkLT {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = 200;
             flavor = "tap-preferred";
             bindings = <&pairSquotLT>, <&leftSquotLT>;
         };
-        pairSquotLT: pairSquotLT {          // SHFT for <>
+
+        pairSquotLT: pairSquotLT {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&pairSquotDchev>, <&t_pairLtGt>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        pairSquotDchev: pairSquotDchev {    // '' or ALT for «»
+
+        pairSquotDchev: pairSquotDchev {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&t_pairSquo>, <&t_pairDchev>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-        leftSquotLT: leftSquotLT {          // SHFT for <
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&leftSquotChev>, <&kp LT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        leftSquotChev: leftSquotLChev {     // ' or ALT for «
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LT>, <&kp LDCHEV>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
-        lkDqt_GT: lkDqt_GT {                // Hold for paired “”
+        leftSquotLT: leftSquotLT {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&leftSquotChev>, <&kp LT>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        leftSquotChev: leftSquotLChev {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LT>, <&kp LDCHEV>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        lkDqt_GT: lkDqt_GT {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = 200;
             flavor = "tap-preferred";
             bindings = <&pairDquotGT>, <&rightDqtGT>;
         };
-        pairDquotGT: pairDquotGT {          // SHIFT = >
+
+        pairDquotGT: pairDquotGT {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&pairDquotChev>, <&kp GT>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        pairDquotChev: pairDquotChev {          // ALT = »
+
+        pairDquotChev: pairDquotChev {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&t_pairDquo>, <&kp RDCHEV>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
-        rightDqtGT: leftDqtGT {              // SHIFT = >
+
+        rightDqtGT: leftDqtGT {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&DqtRchev>, <&kp GT>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        DqtRchev: DqtRchev {                // " or ALT = »
+
+        DqtRchev: DqtRchev {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&DQT>, <&kp RDCHEV>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
     };
@@ -645,10 +688,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-         &kp X  &kp W          &kp M              &kp G                &kp B        &kp J      &kp PERIOD               &kp U              &kp J          &kp B
-         &kp S  &HMR_L LGUI C  &HMR_L LEFT_ALT N  &HMR_L LCTRL T       &kp K        &kp COMMA  &HMR_R LCTRL A           &HMR_R LEFT_ALT E  &HMR_R LGUI I  &ak_h
-&kp DEL  &kp V  &kp F          &kp L              &kp D                &kp V        &kp K      &kp U                    &kp O              &kp Y          &kp P  &kp BSPC
-                               &lt 1 TAB          &HMR_L LEFT_SHIFT R  &kp SPACE    &kp ENTER  &HMR_R LEFT_SHIFT SPACE  &lt 2 ESC
+         &kp X  &kp W          &kp M              &kp G                &lkDqt_lkLT 0 0    &HashDllr   &DotColn                 &lkSqt_GT 0 0      &kp J          &kp B
+         &kp S  &HMR_L LGUI C  &HMR_L LEFT_ALT N  &HMR_L LCTRL T       &kp K              &kp COMMA   &HMR_R LCTRL A           &HMR_R LEFT_ALT E  &HMR_R LGUI I  &ak_h
+&kp DEL  &kp V  &kp F          &kp L              &kp D                &SlshStar          &MinusPlus  &kp U                    &kp O              &kp Y          &kp P  &kp BSPC
+                               &lt 1 TAB          &HMR_L LEFT_SHIFT R  &kp SPACE          &kp ENTER   &HMR_R LEFT_SHIFT SPACE  &lt 2 ESC
             >;
         };
 
