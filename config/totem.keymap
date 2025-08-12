@@ -625,7 +625,7 @@
                 , <&macro_tap &kp LEFT>
                 ;
 
-            label = "MACRO_PAIR_GT"
+            label = "MACRO_PAIR_GT";
         };
 
         macro_pairDquo: macro_pairDquo {
