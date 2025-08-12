@@ -206,6 +206,144 @@
 
             label = "MACRO_TH";
         };
+
+        macro_Ch: macro_Ch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp C>,
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp H>;
+
+            label = "MACRO_CH";
+        };
+
+        macro_Wh: macro_Wh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp W>,
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp H>;
+
+            label = "MACRO_WH";
+        };
+
+        macro_Sh: macro_Sh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp H>;
+
+            label = "MACRO_SH";
+        };
+
+        macro_Gh: macro_Gh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp G>,
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp H>;
+
+            label = "MACRO_GH";
+        };
+
+        macro_Ph: macro_Ph {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp P>,
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp H>;
+
+            label = "MACRO_PH";
+        };
+
+        macro_Sch: macro_Sch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp C &kp H>;
+
+            label = "MACRO_SCH";
+        };
+
+        macro_Tch: macro_Tch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp T>,
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp C &kp H>;
+
+            label = "MACRO_TCH";
+        };
+
+        macro_sion: macro_sion {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp S &kp I &kp O &kp N>;
+
+            label = "MACRO_SION";
+        };
+
+        macro_tion: macro_tion {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp T &kp I &kp O &kp N>;
+
+            label = "MACRO_TION";
+        };
+
+        macro_ght: macro_ght {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp G &kp H &kp T>;
+
+            label = "MACRO_GHT";
+        };
+
+        macro_ing: macro_ing {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp I &kp N &kp G>;
+
+            label = "MACRO_ING";
+        };
     };
 
     keymap {
