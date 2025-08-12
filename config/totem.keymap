@@ -408,28 +408,28 @@
             #binding-cells = <0>;
             bindings = <&sl_dot>;
 
-            ak_CMMA_E { trigger-keys = <FSLH>; max-prior-idle-ms = <my_ak_term>; bindings = <&kp BSPC  &kp EXCL>; };
+            ak_CMMA_E { trigger-keys = <FSLH>; max-prior-idle-ms = <350>; bindings = <&kp BSPC  &kp EXCL>; };
         };
         ak_DQT: ak_DQT {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             bindings = <&kp DQT>;
 
-            ak_DQT_Q { trigger-keys = <FSLH>; max-prior-idle-ms = <my_ak_term>; bindings = <&kp BSPC  &kp QMARK>; };
+            ak_DQT_Q { trigger-keys = <FSLH>; max-prior-idle-ms = <350>; bindings = <&kp BSPC  &kp QMARK>; };
         };
         ak_SQT: ak_SQT {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             bindings = <&kp SQT>;
 
-            ak_SQT_Q { trigger-keys = <FSLH>; max-prior-idle-ms = <my_ak_term>; bindings = <&kp BSPC  &kp S_INVQ>; };
+            ak_SQT_Q { trigger-keys = <FSLH>; max-prior-idle-ms = <350>; bindings = <&kp BSPC  &kp S_INVQ>; };
         };
         ak_HASH: ak_HASH {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             bindings = <&kp HASH>;
 
-        ak_HASH_INVX { trigger-keys = <FSLH>; max-prior-idle-ms = <my_ak_term>; bindings = <&kp BSPC &kp S_INVX>; };
+        ak_HASH_INVX { trigger-keys = <FSLH>; max-prior-idle-ms = <350>; bindings = <&kp BSPC &kp S_INVX>; };
         };
 
         CmmaSemi: CmmaSemi { // press = COMMA,shift = Semicolon
@@ -443,12 +443,12 @@
             #binding-cells = <0>;
             bindings = <&kp CMMA>;
 
-            ak_CMMA_cap { trigger-keys = <CMMA>; max-prior-idle-ms = <my_cc_term>; bindings = <&kp BSPC  &caps_word>; };
+            ak_CMMA_cap { trigger-keys = <CMMA>; max-prior-idle-ms = <1400>; bindings = <&kp BSPC  &caps_word>; };
         };
         CmmaMgc: CmmaMgc {              // Hold for CAPSLOCK, tap for COMMA
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <my_tapping_term>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&CmmaSemi>;
         };
