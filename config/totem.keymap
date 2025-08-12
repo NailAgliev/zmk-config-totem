@@ -239,7 +239,7 @@
         DotColn: DotColn {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&ak_DOT>, <&kp COLON>;
+            bindings = <&DOT>, <&kp COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         DotColnJ: DotColnJ { // no adaptive Japanese
@@ -269,7 +269,7 @@
         HashDllr: HashDllr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&ak_HASH>, <&kp DLLR>;
+            bindings = <&HASH>, <&kp DLLR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         MinusPlus: MinusPlus {
@@ -329,7 +329,7 @@
         leftDquotChev: leftDquotLChev {     // " or ALT for «
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&ak_DQT>, <&kp LDCHEV>;
+            bindings = <&DQT>, <&kp LDCHEV>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -361,7 +361,7 @@
         SqtRchev: SqtRchev {                // ' or ALT = »
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&ak_SQT>, <&kp RDCHEV>;
+            bindings = <&SQT>, <&kp RDCHEV>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 /*
@@ -450,7 +450,7 @@
         DqtRchev: DqtRchev {                // " or ALT = »
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&ak_DQT>, <&kp RDCHEV>;
+            bindings = <&DQT>, <&kp RDCHEV>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
     };
