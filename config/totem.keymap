@@ -744,7 +744,7 @@
 
             bindings = <
          &kp X  &kp W          &kp M              &kp G                &lkDqt_lkLT 0 0    &HashDllr   &DotColn                 &lkSqt_GT 0 0      &kp J          &kp B
-         &kp S  &HMR_L LGUI C  &HMR_L LEFT_ALT N  &HMR_L LCTRL T       &kp K              &CommaMagic  &HMR_R LCTRL A           &HMR_R LEFT_ALT E  &HMR_R LGUI I  &ak_h
+         &kp S  &HMR_L LGUI C  &HMR_L LEFT_ALT N  &HMR_L LCTRL T       &kp K              &CmmaMgc CAPSLOCK 0  &HMR_R LCTRL A           &HMR_R LEFT_ALT E  &HMR_R LGUI I  &ak_h
 &kp DEL  &kp V  &kp F          &kp L              &kp D                &SlshStar          &MinusPlus  &kp U                    &kp O              &kp Y          &kp P  &kp BSPC
                                &lt 1 TAB          &HMR_L LEFT_SHIFT R  &kp SPACE          &kp ENTER   &HMR_R LEFT_SHIFT SPACE  &lt 2 ESC
             >;
