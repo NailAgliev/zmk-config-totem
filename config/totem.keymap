@@ -83,7 +83,7 @@
         };
 
         ph {
-            bindings = <&lk_ph 0 0>;
+            bindings = <&lk_ph H P>;
             key-positions = <30 29>;
         };
     };
