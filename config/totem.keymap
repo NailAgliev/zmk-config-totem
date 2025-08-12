@@ -95,6 +95,11 @@
             timeout-ms = <45>;
             slow-release;
         };
+
+        z {
+            bindings = <&kp Z>;
+            key-positions = <11 13>;
+        };
     };
 
     behaviors {
