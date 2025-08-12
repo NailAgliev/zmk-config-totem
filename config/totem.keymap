@@ -113,7 +113,7 @@
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 34 35 36 37>;
         };
 
-        ak_h: ak_h { // AH -> AU, UH -> UA, EH -> EO, OH -> OE
+        ak_h: ak_h {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             bindings = <&kp H>;
@@ -147,35 +147,28 @@
         //     compatible = "zmk,behavior-adaptive-key";
         //     #binding-cells = <0>;
         //     bindings = <&kp M>;
-
         //     akt_gm {
         //         trigger-keys = <G>;
         //         max-prior-idle-ms = <300>;
         //         bindings = <&kp L>;
         //     };
         // };
-
         // // And similarly for VP->VL, PV->LV, BT->BL, TB->LB
-
         // ak_g: ak_g {
         //     compatible = "zmk,behavior-adaptive-key";
         //     #binding-cells = <0>;
         //     bindings = <&kp G>;
-
         //     // Binding two behaviors: JG->JPG
-
         //     akt_jg {
         //         trigger-keys = <J>;
         //         max-prior-idle-ms = <300>;
         //         bindings = <&kp P &kp G>;
         //     };
         // };
-
         // shift_repeat: shift_repeat {
         //     compatible = "zmk,behavior-adaptive-key";
         //     #binding-cells = <0>;
         //     bindings = <&sk LSHFT>;
-
         //     repeat {
         //         trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
         //         bindings = <&key_repeat>;
@@ -398,7 +391,7 @@
 
             bindings = <
          &kp X  &kp W          &kp M              &kp G                &kp B        &kp J      &kp PERIOD               &kp U              &kp J          &kp B
-         &kp S  &HMR_L LGUI C  &HMR_L LEFT_ALT N  &HMR_L LCTRL T       &kp K        &kp COMMA  &HMR_R LCTRL A           &HMR_R LEFT_ALT E  &HMR_R LGUI I  &kp H
+         &kp S  &HMR_L LGUI C  &HMR_L LEFT_ALT N  &HMR_L LCTRL T       &kp K        &kp COMMA  &HMR_R LCTRL A           &HMR_R LEFT_ALT E  &HMR_R LGUI I  &ak_h
 &kp DEL  &kp V  &kp F          &kp L              &kp D                &kp V        &kp K      &kp U                    &kp O              &kp Y          &kp P  &kp BSPC
                                &lt 1 TAB          &HMR_L LEFT_SHIFT R  &kp SPACE    &kp ENTER  &HMR_R LEFT_SHIFT SPACE  &lt 2 ESC
             >;
