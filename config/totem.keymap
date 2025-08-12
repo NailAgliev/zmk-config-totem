@@ -48,7 +48,7 @@
         };
 
         th {
-            bindings = <&lk_th 0 0>;
+            bindings = <&lk_th H T>;
             key-positions = <12 13>;
             timeout-ms = <45>;
             slow-release;
@@ -69,15 +69,17 @@
         };
 
         sh {
-            bindings = <&lk_sh 0 0>;
+            bindings = <&lk_sh H S>;
             key-positions = <10 11>;
             timeout-ms = <45>;
             slow-release;
         };
 
         gh {
-            bindings = <&lk_gh 0 0>;
+            bindings = <&lk_gh H G>;
             key-positions = <2 3>;
+            timeout-ms = <45>;
+            slow-release;
         };
     };
 
@@ -200,6 +202,15 @@
             label = "LK_GH";
             bindings = <&macro_ght>, <&macro_Gh>;
 
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        lk_ph: lk_ph {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LK_PH";
+            bindings = <&macro_phi>, <&macro_Ph>;
+            
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -348,6 +359,14 @@
             bindings = <&macro_tap>, <&kp I &kp N &kp G>;
 
             label = "MACRO_ING";
+        };
+
+        macro_phi: macro_phi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp P &kp H &kp I>;
+
+            label = "MACRO_PHI";
         };
     };
 
