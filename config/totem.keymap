@@ -191,10 +191,28 @@
             };
         };
 
-        lk_th: lk_th {
+        lk_th: lk_th { // Th on tap, tion on "linger"
             compatible = "zmk,behavior-hold-tap";
             label = "LK_TH";
             bindings = <&macro_tion>, <&macro_Th>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        lk_sh: lk_sh { // Sh on tap, sion on "linger"
+            compatible = "zmk,behavior-hold-tap";
+            label = "LK_SH";
+            bindings = <&macro_sion>, <&macro_Sh>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        lk_gh: lk_gh { // Gh on tap, Ght on "linger"
+            compatible = "zmk,behavior-hold-tap";
+            label = "LK_GH";
+            bindings = <&macro_ght>, <&macro_Gh>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
