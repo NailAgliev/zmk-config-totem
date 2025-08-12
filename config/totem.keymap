@@ -190,6 +190,15 @@
                 strict-modifiers;
             };
         };
+
+        lk_th: lk_th {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LK_TH";
+            bindings = <&macro_tion>, <&macro_Th>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -308,9 +317,7 @@
         macro_sion: macro_sion {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp S &kp I &kp O &kp N>;
+            bindings = <&macro_tap>, <&kp S &kp I &kp O &kp N>;
 
             label = "MACRO_SION";
         };
@@ -318,9 +325,7 @@
         macro_tion: macro_tion {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp T &kp I &kp O &kp N>;
+            bindings = <&macro_tap>, <&kp T &kp I &kp O &kp N>;
 
             label = "MACRO_TION";
         };
@@ -328,9 +333,7 @@
         macro_ght: macro_ght {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp G &kp H &kp T>;
+            bindings = <&macro_tap>, <&kp G &kp H &kp T>;
 
             label = "MACRO_GHT";
         };
@@ -338,9 +341,7 @@
         macro_ing: macro_ing {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp I &kp N &kp G>;
+            bindings = <&macro_tap>, <&kp I &kp N &kp G>;
 
             label = "MACRO_ING";
         };
