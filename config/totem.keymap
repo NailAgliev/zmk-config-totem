@@ -269,7 +269,7 @@
         HashDllr: HashDllr {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&ak_HASH>, <&kp DLLR>;
+            bindings = <&kp HASH>, <&kp DLLR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         MinusPlus: MinusPlus {
@@ -336,7 +336,7 @@
         rightSquotGT: rightSquotGT {          // SHIFT = >
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&ak_SQT>, <&kp GT>;
+            bindings = <&kp SQT>, <&kp GT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 /*
@@ -416,20 +416,6 @@
             bindings = <&kp DQT>;
 
             ak_DQT_Q { trigger-keys = <FSLH>; max-prior-idle-ms = <350>; bindings = <&kp BSPC  &kp QMARK>; };
-        };
-        ak_SQT: ak_SQT {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp SQT>;
-
-            ak_SQT_Q { trigger-keys = <FSLH>; max-prior-idle-ms = <350>; bindings = <&kp BSPC  &kp S_INVQ>; };
-        };
-        ak_HASH: ak_HASH {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp HASH>;
-
-        ak_HASH_INVX { trigger-keys = <FSLH>; max-prior-idle-ms = <350>; bindings = <&kp BSPC &kp S_INVX>; };
         };
 
         CmmaSemi: CmmaSemi { // press = COMMA,shift = Semicolon
