@@ -113,7 +113,7 @@
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 34 35 36 37>;
         };
 
-        ak_h: ak_h {
+        ak_h: ak_h { // AH -> AU, UH -> UA, EH -> EO, OH -> OE
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
             bindings = <&kp H>;
@@ -135,54 +135,54 @@
                 max-prior-idle-ms = <300>;
                 bindings = <&kp O>;
             };
-        };
 
-        ak_m: ak_m {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp M>;
-
-            akt_gm {
-                trigger-keys = <G>;
+            akt_oh {
+                trigger-keys = <O>;
                 max-prior-idle-ms = <300>;
-                bindings = <&kp L>;
-            };
-
-            akt_pm {
-                trigger-keys = <P>;
-                max-prior-idle-ms = <300>;
-                bindings = <&kp L>;
+                bindings = <&kp E>;
             };
         };
 
-        // And similarly for VP->VL, PV->LV, BT->BL, TB->LB
+        // ak_m: ak_m { // GM -> GL, 
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp M>;
 
-        ak_g: ak_g {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp G>;
+        //     akt_gm {
+        //         trigger-keys = <G>;
+        //         max-prior-idle-ms = <300>;
+        //         bindings = <&kp L>;
+        //     };
+        // };
 
-            // Binding two behaviors: JG->JPG
+        // // And similarly for VP->VL, PV->LV, BT->BL, TB->LB
 
-            akt_jg {
-                trigger-keys = <J>;
-                max-prior-idle-ms = <300>;
-                bindings = <&kp P &kp G>;
-            };
-        };
+        // ak_g: ak_g {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp G>;
 
-        shift_repeat: shift_repeat {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&sk LSHFT>;
+        //     // Binding two behaviors: JG->JPG
 
-            repeat {
-                trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
-                bindings = <&key_repeat>;
-                max-prior-idle-ms = <350>;
-                strict-modifiers;
-            };
-        };
+        //     akt_jg {
+        //         trigger-keys = <J>;
+        //         max-prior-idle-ms = <300>;
+        //         bindings = <&kp P &kp G>;
+        //     };
+        // };
+
+        // shift_repeat: shift_repeat {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&sk LSHFT>;
+
+        //     repeat {
+        //         trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
+        //         bindings = <&key_repeat>;
+        //         max-prior-idle-ms = <350>;
+        //         strict-modifiers;
+        //     };
+        // };
 
         lk_th: lk_th {
             compatible = "zmk,behavior-hold-tap";
