@@ -32,67 +32,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
-        l_brc {
-            bindings = <&kp LBRC>;
-            key-positions = <3 2>;
-        };
-
-        r_brc {
-            bindings = <&kp RBRC>;
-            key-positions = <6 7>;
-        };
-
-        l_par {
-            bindings = <&kp LPAR>;
-            key-positions = <13 12>;
-        };
-
-        r_par {
-            bindings = <&kp RPAR>;
-            key-positions = <16 17>;
-        };
-
-        l_bkt {
-            bindings = <&kp LBKT>;
-            key-positions = <24 23>;
-        };
-
-        r_bkt {
-            bindings = <&kp RBKT>;
-            key-positions = <27 28>;
-        };
-
-        minus {
-            bindings = <&kp MINUS>;
-            key-positions = <1 2>;
-        };
-
-        equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <7 8>;
-        };
-
-        sqt {
-            bindings = <&kp SQT>;
-            key-positions = <11 12>;
-        };
-
-        dqt {
-            bindings = <&kp DQT>;
-            key-positions = <17 18>;
-        };
-
-        z {
-            bindings = <&kp Z>;
-            key-positions = <22 21>;
-        };
     };
 
     behaviors {
