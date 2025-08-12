@@ -216,7 +216,7 @@
             bindings = <
          &kp X  &kp W          &kp M              &kp G                &kp B        &kp J      &kp PERIOD               &kp U              &kp J          &kp B
          &kp S  &HMR_L LGUI C  &HMR_L LEFT_ALT N  &HMR_L LCTRL T       &kp K        &kp COMMA  &HMR_R LCTRL A           &HMR_R LEFT_ALT E  &HMR_R LGUI I  &kp H
-&kp DEL  &kp V  &kp P          &kp L              &kp D                &kp V        &kp K      &kp U                    &kp O              &kp Y          &kp F  &kp BSPC
+&kp DEL  &kp V  &kp F          &kp L              &kp D                &kp V        &kp K      &kp U                    &kp O              &kp Y          &kp P  &kp BSPC
                                &lt 1 TAB          &HMR_L LEFT_SHIFT R  &kp SPACE    &kp ENTER  &HMR_R LEFT_SHIFT SPACE  &lt 2 ESC
             >;
         };
