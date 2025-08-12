@@ -81,6 +81,11 @@
             timeout-ms = <45>;
             slow-release;
         };
+
+        ph {
+            bindings = <&lk_ph 0 0>;
+            key-positions = <30 29>;
+        };
     };
 
     behaviors {
@@ -210,7 +215,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LK_PH";
             bindings = <&macro_phi>, <&macro_Ph>;
-            
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
