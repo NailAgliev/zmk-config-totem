@@ -6,9 +6,15 @@ manifest:
       url-base: https://github.com/urob
   projects:
     - name: zmk
-      remote: urob
+      remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zephyr
+      remote: urob
+      revision: v3.5.0+zmk-fixes
+      clone-depth: 1
+      import:
+        name-allowlist: [lvgl]
     - name: zmk-adaptive-key
       remote: urob
       revision: main
