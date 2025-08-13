@@ -438,7 +438,7 @@
         ak_DOT: ak_DOT {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            bindings = <&sl_dot>;
+            bindings = <&kp DOT>;
 
             ak_CMMA_E {
                 trigger-keys = <FSLH>;
