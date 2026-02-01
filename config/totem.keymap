@@ -296,7 +296,7 @@
 
         CopyCombo: CopyCombo {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&macro_copy>, <&macro_copy_term>;
@@ -304,7 +304,7 @@
 
         PasteCombo: PasteCombo {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&macro_paste>, <&macro_paste_term>;
@@ -312,7 +312,7 @@
 
         LBrktPair: LBrktPair {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp LBKT>, <&macro_pairBrackets>;
@@ -320,7 +320,7 @@
 
         LBracePair: LBracePair {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp LBRC>, <&macro_pairBraces>;
@@ -328,7 +328,7 @@
 
         LParenPair: LParenPair {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp LPAR>, <&macro_pairParens>;
