@@ -315,7 +315,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&kp LBKT>, <&macro_pairBrackets>;
+            bindings = <&kp>, <&macro_pairBrackets>;
         };
 
         LBracePair: LBracePair {
@@ -323,7 +323,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&kp LBRC>, <&macro_pairBraces>;
+            bindings = <&kp>, <&macro_pairBraces>;
         };
 
         LParenPair: LParenPair {
@@ -331,7 +331,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&kp LPAR>, <&macro_pairParens>;
+            bindings = <&kp>, <&macro_pairParens>;
         };
 
         /*
@@ -353,7 +353,7 @@
  *
  */
 
-        #define DqtLT lkDqt_lkLT 0 0    // simple macros to keep the keymap uncluttered
+#define DqtLT lkDqt_lkLT 0 0    // simple macros to keep the keymap uncluttered
 #define SqtGT lkSqt_GT 0 0      // simply put &DqtLT or &SqtGT in the keymap
         lkDqt_lkLT: lkDqt_lkLT {
             compatible = "zmk,behavior-hold-tap";
@@ -860,9 +860,9 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &trans  &CopyCombo     &kp UP    &PasteCombo     &LBracePair  &kp RBRC  &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp KP_PLUS
-            &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &LBrktPair   &kp RBKT  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_MINUS
-        &trans  &trans  &kp PG_UP  &trans    &kp PG_DN  &LParenPair &kp RPAR  &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &trans
+        &trans  &CopyCombo 0 0     &kp UP    &PasteCombo 0 0     &LBracePair LBRC 0  &kp RBRC  &kp KP_N7        &kp KP_N8  &kp KP_N9  &kp KP_PLUS
+            &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &LBrktPair LBKT 0   &kp RBKT  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_MINUS
+        &trans  &trans  &kp PG_UP  &trans    &kp PG_DN  &LParenPair LPAR 0 &kp RPAR  &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &trans
                            &trans    &trans     &trans    &trans  &kp KP_NUMBER_0  &trans
             >;
         };
