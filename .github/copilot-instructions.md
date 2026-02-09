@@ -88,12 +88,12 @@ Behaviors follow patterns for clarity:
 
 ### Combo Position Reference
 
-The 38-key TOTEM layout maps as:
+The 38-key TOTEM layout maps as (from [totem.dtsi](config/boards/shields/totem/totem.dtsi)):
 ```
-Row 0:  0  1  2  3  4  |  5  6  7  8  9      (number row)
-Row 1:  10 11 12 13 14 | 15 16 17 18 19     (home row)
-Row 2:  20 21 22 23 24 | 25 26 27 28 29 30  (lower row, 20 & 30 outer)
-Row 3:        32 33 34 | 35 36 37           (thumb cluster, 20 left outer, 31 right outer)
+Row 0:    0  1  2  3  4  |  5  6  7  8  9     (upper row)
+Row 1:    10 11 12 13 14 | 15 16 17 18 19     (home row)
+Row 2: 20 21 22 23 24 25 | 26 27 28 29 30 31  (lower row, 20=left outer, 31=right outer)
+Row 3:          32 33 34 | 35 36 37           (thumb cluster)
 ```
 
 **Common combos**:

@@ -739,8 +739,12 @@
         macro_copy: macro_copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            tap-ms = <55>;
-            bindings = <&macro_tap>, <&kp LCTRL &kp C>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
+                <&macro_press &kp LCTRL>,
+                <&kp C>,
+                <&macro_release &kp LCTRL>;
 
             label = "MACRO_COPY";
         };
@@ -748,8 +752,13 @@
         macro_copy_term: macro_copy_term {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            tap-ms = <55>;
-            bindings = <&macro_tap>, <&kp LCTRL &kp LSHIFT &kp C>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
+                <&macro_press &kp LCTRL>,
+                <&kp LSHIFT>,
+                <&kp C>,
+                <&macro_release &kp LCTRL>;
 
             label = "MACRO_COPY_TERM";
         };
@@ -757,8 +766,12 @@
         macro_paste: macro_paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            tap-ms = <55>;
-            bindings = <&macro_tap>, <&kp LCTRL &kp V>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
+                <&macro_press &kp LCTRL>,
+                <&kp V>,
+                <&macro_release &kp LCTRL>;
 
             label = "MACRO_PASTE";
         };
@@ -766,8 +779,13 @@
         macro_paste_term: macro_paste_term {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            tap-ms = <55>;
-            bindings = <&macro_tap>, <&kp LCTRL &kp LSHIFT &kp V>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
+                <&macro_press &kp LCTRL>,
+                <&kp LSHIFT>,
+                <&kp V>,
+                <&macro_release &kp LCTRL>;
 
             label = "MACRO_PASTE_TERM";
         };
