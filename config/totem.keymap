@@ -310,6 +310,22 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        GraveTilde: GraveTilde {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp TILDE>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        BslhPipe: BslhPipe {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSLH>, <&kp PIPE>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         BspcDel: BspcDel {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -866,7 +882,7 @@
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
             //             ┃     S     ┃   C/GUI   ┃   N/ALT   ┃   T/CTRL  ┃     K     ┃   ┃    ,/SFT  ┃   A/CTRL  ┃   E/ALT   ┃  I/GUI    ┃     H     ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃    DEL    ┃     V     ┃     F     ┃     L     ┃     D     ┃    _/     ┃   ┃    -+     ┃     U     ┃     O     ┃     Y     ┃     P     ┃   BSPC    ┃
+            // ┃    `~     ┃     V     ┃     F     ┃     L     ┃     D     ┃    _/     ┃   ┃    -+     ┃     U     ┃     O     ┃     Y     ┃     P     ┃    \|     ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
             //                                     ┃    TAB    ┃   R/SHIFT ┃   BSPC    ┃   ┃   ENTER   ┃ SPC/SHIFT ┃    ESC    ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -874,7 +890,7 @@
             bindings = <
          &kp X  &kp W          &kp M              &kp G                &DqtParen          &EqualAmp            &DotColn                 &SqtLt             &kp J          &kp B
          &kp S  &HMR_L LGUI C  &HMR_L LEFT_ALT N  &HMR_L LCTRL T       &kp K              &CmmaMgc CAPSLOCK 0  &HMR_R LCTRL A           &HMR_R LEFT_ALT E  &HMR_R LGUI I  &ak_h
-&kp DEL  &kp V  &kp F          &kp L              &kp D                &UnderSlash        &MinusPlus           &kp U                    &kp O              &kp Y          &kp P  &BspcDel
+&GraveTilde  &kp V  &kp F          &kp L              &kp D                &UnderSlash        &MinusPlus           &kp U                    &kp O              &kp Y          &kp P  &BslhPipe
                                &lt 1 TAB          &HMR_L LEFT_SHIFT R  &BspcDel           &kp ENTER            &HMR_R LEFT_SHIFT SPACE  &lt 2 ESC
             >;
         };
@@ -914,9 +930,9 @@
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃           ┃           ┃           ┃           ┃           ┃   ┃     /     ┃     >     ┃     |     ┃           ┃           ┃
+            //             ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃     *     ┃     #     ┃     !     ┃     %     ┃     ^     ┃   ┃     $     ┃     @     ┃     \     ┃           ┃           ┃
+            //             ┃           ┃     #     ┃     *     ┃     %     ┃     ^     ┃   ┃     $     ┃     @     ┃     >     ┃           ┃           ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
             // ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃  VOL_DN   ┃  VOL_UP   ┃   PREV    ┃   NEXT    ┃           ┃           ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -924,9 +940,9 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &trans  &trans        &trans     &trans           &trans         &trans        &kp FSLH      &kp GT       &kp PIPE    &trans
-        &trans  &kp ASTERISK  &kp POUND  &kp EXCLAMATION  &kp PERCENT    &kp CARET     &kp DOLLAR    &kp AT_SIGN  &kp BSLH    &trans
-&trans  &trans  &trans        &trans     &trans           &trans         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PREV   &kp C_NEXT  &trans  &trans
+        &trans  &trans        &trans        &trans       &trans         &trans        &trans        &trans      &trans      &trans
+        &trans  &trans        &kp POUND     &kp ASTERISK &kp PERCENT    &kp CARET     &kp DOLLAR    &kp AT_SIGN &kp GT      &trans
+&trans  &trans  &trans        &trans        &trans       &trans         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PREV  &kp C_NEXT  &trans  &trans
                               &trans     &trans           &trans         &trans        &trans        &trans
             >;
         };
