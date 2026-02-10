@@ -339,7 +339,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&macro_copy>, <&macro_copy_term>;
+            bindings = <&macro_copy_term>, <&macro_copy>;
         };
 
         PasteCombo: PasteCombo {
@@ -347,7 +347,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&macro_paste>, <&macro_paste_term>;
+            bindings = <&macro_paste_term>, <&macro_paste>;
         };
 
         LBrktPair: LBrktPair {
@@ -355,7 +355,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&macro_pairBrackets>;
+            bindings = <&macro_pairBrackets>, <&kp>;
         };
 
         LBracePair: LBracePair {
@@ -363,7 +363,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&macro_pairBraces>;
+            bindings = <&macro_pairBraces>, <&kp>;
         };
 
         LParenPair: LParenPair {
@@ -371,7 +371,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&macro_pairParens>;
+            bindings = <&macro_pairParens>, <&kp>;
         };
 
         /*
@@ -779,8 +779,7 @@
                 <&macro_release>,
                 <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
                 <&macro_press &kp LCTRL>,
-                <&kp C>,
-                <&macro_release &kp LCTRL>;
+                <&kp C>;
 
             label = "MACRO_COPY";
         };
@@ -793,8 +792,7 @@
                 <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
                 <&macro_press &kp LCTRL>,
                 <&kp LSHIFT>,
-                <&kp C>,
-                <&macro_release &kp LCTRL>;
+                <&kp C>;
 
             label = "MACRO_COPY_TERM";
         };
@@ -806,8 +804,7 @@
                 <&macro_release>,
                 <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
                 <&macro_press &kp LCTRL>,
-                <&kp V>,
-                <&macro_release &kp LCTRL>;
+                <&kp V>;
 
             label = "MACRO_PASTE";
         };
@@ -820,8 +817,7 @@
                 <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
                 <&macro_press &kp LCTRL>,
                 <&kp LSHIFT>,
-                <&kp V>,
-                <&macro_release &kp LCTRL>;
+                <&kp V>;
 
             label = "MACRO_PASTE_TERM";
         };
