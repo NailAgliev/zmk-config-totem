@@ -778,7 +778,7 @@
             bindings =
                 <&macro_release>,
                 <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
-                <&macro_press>,
+                <&macro_tap>,
                 <&kp LC(C)>;
 
             label = "MACRO_COPY";
@@ -790,7 +790,7 @@
             bindings =
                 <&macro_release>,
                 <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
-                <&macro_press>,
+                <&macro_tap>,
                 <&kp LS(LC(C))>;
 
             label = "MACRO_COPY_TERM";
@@ -802,7 +802,7 @@
             bindings =
                 <&macro_release>,
                 <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
-                <&macro_press>,
+                <&macro_tap>,
                 <&kp LC(V)>;
 
             label = "MACRO_PASTE";
@@ -814,7 +814,7 @@
             bindings =
                 <&macro_release>,
                 <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
-                <&macro_press>,
+                <&macro_tap>,
                 <&kp LS(LC(V))>;
 
             label = "MACRO_PASTE_TERM";
