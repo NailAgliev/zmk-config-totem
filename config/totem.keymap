@@ -294,6 +294,22 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        EqualAmp: EqualAmp {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>, <&kp AMPERSAND>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        UnderSlash: UnderSlash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp UNDER>, <&kp FSLH>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         CopyCombo: CopyCombo {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -353,52 +369,36 @@
  *
  */
 
-#define DqtLT lkDqt_lkLT 0 0    // simple macros to keep the keymap uncluttered
-#define SqtGT lkSqt_GT 0 0      // simply put &DqtLT or &SqtGT in the keymap
-        lkDqt_lkLT: lkDqt_lkLT {
+#define DqtParen lkDqt_Paren 0 0    // " on tap, ( on shift, paired "" on hold
+#define SqtLt lkSqt_Lt 0 0          // ' on tap, < on shift, paired '' on hold
+        lkDqt_Paren: lkDqt_Paren {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&pairDquotLT>, <&leftDquotLT>;
+            bindings = <&macro_pairDquo>, <&leftDquotParen>;
         };
 
-        pairDquotLT: pairDquotLT {
+        leftDquotParen: leftDquotParen {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_pairDquo>, <&macro_pairLtGt>;
+            bindings = <&ak_DQT>, <&kp LPAR>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        leftDquotLT: leftDquotLT {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ak_DQT>, <&kp LT>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        lkSqt_GT: lkSqt_GT {
+        lkSqt_Lt: lkSqt_Lt {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&pairSquotGT>, <&rightSquotGT>;
+            bindings = <&macro_pairSquo>, <&rightSquotLt>;
         };
 
-        pairSquotGT: pairSquotGT {
+        rightSquotLt: rightSquotLt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_pairSquo>, <&kp GT>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        rightSquotGT: rightSquotGT {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp GT>;
+            bindings = <&ak_SQT>, <&kp LT>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -482,10 +482,10 @@
             #binding-cells = <0>;
             bindings = <&kp DOT>;
 
-            ak_CMMA_E {
-                trigger-keys = <FSLH>;
+            ak_DOT_Q {
+                trigger-keys = <UNDER>;
                 max-prior-idle-ms = <350>;
-                bindings = <&kp BSPC  &kp EXCL>;
+                bindings = <&kp BSPC  &kp QMARK>;
             };
         };
 
@@ -495,9 +495,21 @@
             bindings = <&kp DQT>;
 
             ak_DQT_Q {
-                trigger-keys = <FSLH>;
+                trigger-keys = <UNDER>;
                 max-prior-idle-ms = <350>;
                 bindings = <&kp BSPC  &kp QMARK>;
+            };
+        };
+
+        ak_SQT: ak_SQT {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>;
+
+            ak_SQT_E {
+                trigger-keys = <UNDER>;
+                max-prior-idle-ms = <350>;
+                bindings = <&kp BSPC  &kp EXCL>;
             };
         };
 
@@ -842,19 +854,19 @@
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃     X     ┃     W     ┃     M     ┃     G     ┃     "     ┃   ┃     =     ┃     :     ┃     '     ┃     J     ┃     B     ┃
+            //             ┃     X     ┃     W     ┃     M     ┃     G     ┃   "/(     ┃   ┃    =/&    ┃     :     ┃   '/<     ┃     J     ┃     B     ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
             //             ┃     S     ┃   C/GUI   ┃   N/ALT   ┃   T/CTRL  ┃     K     ┃   ┃    ,/SFT  ┃   A/CTRL  ┃   E/ALT   ┃  I/GUI    ┃     H     ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃    DEL    ┃     V     ┃     F     ┃     L     ┃     D     ┃    /\    ┃   ┃    -+     ┃     U     ┃     O     ┃     Y     ┃     P     ┃   BSPC    ┃
+            // ┃    DEL    ┃     V     ┃     F     ┃     L     ┃     D     ┃    _/     ┃   ┃    -+     ┃     U     ┃     O     ┃     Y     ┃     P     ┃   BSPC    ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
             //                                     ┃    TAB    ┃   R/SHIFT ┃   BSPC    ┃   ┃   ENTER   ┃ SPC/SHIFT ┃    ESC    ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-         &kp X  &kp W          &kp M              &kp G                &lkDqt_lkLT 0 0    &kp EQUAL            &DotColn                 &lkSqt_GT 0 0      &kp J          &kp B
+         &kp X  &kp W          &kp M              &kp G                &DqtParen          &EqualAmp            &DotColn                 &SqtLt             &kp J          &kp B
          &kp S  &HMR_L LGUI C  &HMR_L LEFT_ALT N  &HMR_L LCTRL T       &kp K              &CmmaMgc CAPSLOCK 0  &HMR_R LCTRL A           &HMR_R LEFT_ALT E  &HMR_R LGUI I  &ak_h
-&kp DEL  &kp V  &kp F          &kp L              &kp D                &SlshStar          &MinusPlus           &kp U                    &kp O              &kp Y          &kp P  &kp BSPC
+&kp DEL  &kp V  &kp F          &kp L              &kp D                &UnderSlash        &MinusPlus           &kp U                    &kp O              &kp Y          &kp P  &kp BSPC
                                &lt 1 TAB          &HMR_L LEFT_SHIFT R  &kp BSPC           &kp ENTER            &HMR_R LEFT_SHIFT SPACE  &lt 2 ESC
             >;
         };
@@ -894,9 +906,9 @@
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
+            //             ┃           ┃           ┃           ┃           ┃           ┃   ┃     /     ┃     >     ┃     |     ┃           ┃           ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃     *     ┃     #     ┃     !     ┃     %     ┃     ^     ┃   ┃     $     ┃     @     ┃           ┃           ┃           ┃
+            //             ┃     *     ┃     #     ┃     !     ┃     %     ┃     ^     ┃   ┃     $     ┃     @     ┃     \     ┃           ┃           ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
             // ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃  VOL_DN   ┃  VOL_UP   ┃   PREV    ┃   NEXT    ┃           ┃           ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -904,8 +916,8 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &trans  &trans        &trans     &trans           &trans         &trans        &trans        &trans       &trans      &trans
-        &trans  &kp ASTERISK  &kp POUND  &kp EXCLAMATION  &kp PERCENT    &kp CARET     &kp DOLLAR    &kp AT_SIGN  &trans      &trans
+        &trans  &trans        &trans     &trans           &trans         &trans        &kp FSLH      &kp GT       &kp PIPE    &trans
+        &trans  &kp ASTERISK  &kp POUND  &kp EXCLAMATION  &kp PERCENT    &kp CARET     &kp DOLLAR    &kp AT_SIGN  &kp BSLH    &trans
 &trans  &trans  &trans        &trans     &trans           &trans         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PREV   &kp C_NEXT  &trans  &trans
                               &trans     &trans           &trans         &trans        &trans        &trans
             >;
