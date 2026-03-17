@@ -894,7 +894,7 @@
              &kp X  &kp W          &kp M              &kp G                &DqtParen      &EqualAmp            &DotColn                 &SqtLt             &kp J          &kp B
              &kp S  &HMR_L LGUI C  &HMR_L LEFT_ALT N  &HMR_L LCTRL T       &kp K          &CmmaMgc CAPSLOCK 0  &HMR_R LCTRL A           &HMR_R LEFT_ALT E  &HMR_R LGUI I  &ak_h
 &GraveTilde  &kp V  &kp F          &kp L              &kp D                &UnderSlash    &MinusPlus           &kp U                    &kp O              &kp Y          &kp P  &BslhPipe
-                                   &lt 2 TAB          &HMR_L LEFT_SHIFT R  &BspcDel       &kp ENTER            &HMR_R LEFT_SHIFT SPACE  &lt 3 ESC
+                                   &lt NAV TAB          &HMR_L LEFT_SHIFT R  &BspcDel       &kp ENTER            &HMR_R LEFT_SHIFT SPACE  &lt SYM ESC
             >;
         };
 
@@ -918,7 +918,7 @@
            &kp Q  &kp W  &kp E      &kp R      &kp T       &kp Y      &kp U      &kp I      &kp O    &kp P
            &kp A  &kp S  &kp D      &kp F      &kp G       &kp H      &kp J      &kp K      &kp L    &kp SEMI
 &kp GRAVE  &kp Z  &kp X  &kp C      &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
-                         &lt 3 TAB  &kp LSHFT  &kp BSPC    &kp ENTER  &kp SPACE  &lt 4 ESC
+                         &lt NAV TAB  &kp LSHFT  &kp BSPC    &kp ENTER  &kp SPACE  &lt SYM ESC
             >;
         };
 
